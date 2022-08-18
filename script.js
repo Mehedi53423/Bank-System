@@ -5,6 +5,6 @@ document.getElementById("sub-btn").addEventListener("click", function () {
   if (emailField === "mehedi53423@gmail.com" && passField === "12345") {
     window.location.href = "bank.html";
   } else {
-    console.log("invalid User");
+    alert("invalid User");
   }
 });
