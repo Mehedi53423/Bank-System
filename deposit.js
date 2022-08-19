@@ -5,10 +5,21 @@ document.getElementById("depositBtn").addEventListener("click", function () {
 
   const depositAmount = depositField.value;
 
-  depositTotal.innerText =
-    parseFloat(depositTotal.innerText) + parseFloat(depositAmount);
+  console.log(depositAmount);
+
+  if (isNaN(depositAmount)) {
+    alert("Please, Enter Amount In Number");
+  } else if (depositAmount === "") {
+    alert("Please, Enter The Amount");
+  } else if (depositAmount < 0) {
+    alert("Please, Enter A Positive Number");
+  } else {
+    depositTotal.innerText =
+      parseFloat(depositTotal.innerText) + parseFloat(depositAmount);
+
+    balance.innerText =
+      parseFloat(balance.innerText) + parseFloat(depositAmount);
+  }
 
   depositField.value = "";
-
-  balance.innerText = parseFloat(balance.innerText) + parseFloat(depositAmount);
 });
